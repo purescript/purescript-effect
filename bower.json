@@ -1,0 +1,16 @@
+{
+  "name": "purescript-eff",
+  "version": "0.1.0",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "dependencies": {
+    "purescript-prelude": "~0.1.0"
+  }
+}
