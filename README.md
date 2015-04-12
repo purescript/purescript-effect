@@ -1,3 +1,7 @@
+# Important notice
+
+This module should not yet be depended on, it is for the upcoming 0.7 compiler release.
+
 # Module Documentation
 
 ## Module Control.Monad.Eff
