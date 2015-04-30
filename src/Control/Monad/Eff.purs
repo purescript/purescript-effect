@@ -127,4 +127,4 @@ foreign import foreachE
       };
     };
   }
-  """ :: forall e a. [a] -> (a -> Eff e Unit) -> Eff e Unit
+  """ :: forall e a. Array a -> (a -> Eff e Unit) -> Eff e Unit
