@@ -49,16 +49,16 @@ foreign import runPure
   """ :: forall a. Pure a -> a
 
 instance functorEff :: Functor (Eff e) where
-  (<$>) = liftA1
+  map = liftA1
 
 instance applyEff :: Apply (Eff e) where
-  (<*>) = ap
+  apply = ap
 
 instance applicativeEff :: Applicative (Eff e) where
   pure = returnE
 
 instance bindEff :: Bind (Eff e) where
-  (>>=) = bindE
+  bind = bindE
 
 instance monadEff :: Monad (Eff e)
 
