@@ -110,7 +110,7 @@ between `lo` (inclusive) and `hi` (exclusive).
 #### `foreachE`
 
 ``` purescript
-foreachE :: forall e a. [a] -> (a -> Eff e Unit) -> Eff e Unit
+foreachE :: forall e a. Array a -> (a -> Eff e Unit) -> Eff e Unit
 ```
 
 Loop over an array of values.
