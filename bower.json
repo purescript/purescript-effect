@@ -1,14 +1,24 @@
 {
-  "name": "purescript-eff",
-  "version": "0.1.0",
-  "moduleType": [
-    "node"
+  "name": "purescript-prelude",
+  "homepage": "https://github.com/purescript/purescript-eff",
+  "description": "The Eff monad, for handling native side effects",
+  "keywords": [
+    "purescript"
   ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript/purescript-eff.git"
+  },
   "ignore": [
     "**/.*",
-    "node_modules",
     "bower_components",
-    "output"
+    "node_modules",
+    "output",
+    "test",
+    "bower.json",
+    "gulpfile.js",
+    "package.json"
   ],
   "dependencies": {
     "purescript-prelude": "~0.1.0"
