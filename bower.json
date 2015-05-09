@@ -1,5 +1,5 @@
 {
-  "name": "purescript-prelude",
+  "name": "purescript-eff",
   "homepage": "https://github.com/purescript/purescript-eff",
   "description": "The Eff monad, for handling native side effects",
   "keywords": [
