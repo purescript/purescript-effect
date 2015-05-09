@@ -1,4 +1,9 @@
-output
-bower_components
-.psci
-.psci_modules
+/.*
+!/.gitignore
+!/.jscsrc
+!/.jshintrc
+!/.travis.yml
+/bower_components/
+/node_modules/
+/output/
+/tmp/
