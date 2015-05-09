@@ -3,34 +3,34 @@
 
 // module Control.Monad.Eff
 
-exports.returnE = function(a) {
-  return function() {
+exports.returnE = function (a) {
+  return function () {
     return a;
   };
 };
 
-exports.bindE = function(a) {
-  return function(f) {
-    return function() {
+exports.bindE = function (a) {
+  return function (f) {
+    return function () {
       return f(a())();
     };
   };
 };
 
-exports.runPure = function(f) {
+exports.runPure = function (f) {
   return f();
 };
 
-exports.untilE = function(f) {
-  return function() {
+exports.untilE = function (f) {
+  return function () {
     while (!f());
     return {};
   };
 };
 
-exports.whileE = function(f) {
-  return function(a) {
-    return function() {
+exports.whileE = function (f) {
+  return function (a) {
+    return function () {
       while (f()) {
         a();
       }
@@ -39,10 +39,10 @@ exports.whileE = function(f) {
   };
 };
 
-exports.forE = function(lo) {
-  return function(hi) {
-    return function(f) {
-      return function() {
+exports.forE = function (lo) {
+  return function (hi) {
+    return function (f) {
+      return function () {
         for (var i = lo; i < hi; i++) {
           f(i)();
         }
@@ -51,9 +51,9 @@ exports.forE = function(lo) {
   };
 };
 
-exports.foreachE = function(as) {
-  return function(f) {
-    return function() {
+exports.foreachE = function (as) {
+  return function (f) {
+    return function () {
       for (var i = 0, l = as.length; i < l; i++) {
         f(as[i])();
       }
