@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/purescript/purescript-eff.svg?branch=master)](https://travis-ci.org/purescript/purescript-eff)
 
-The `Eff` monad for native effects. For use with compiler version >= 0.7.
+The `Eff` monad, for handling native side effects. For use with compiler version >= 0.7.
 
 ## Installation
 
