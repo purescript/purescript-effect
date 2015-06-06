@@ -5,6 +5,8 @@ module Control.Monad.Eff
   , untilE, whileE, forE, foreachE
   ) where
 
+import Prelude
+
 -- | The `Eff` type constructor is used to represent _native_ effects.
 -- |
 -- | See [Handling Native Effects with the Eff Monad](https://github.com/purescript/purescript/wiki/Handling-Native-Effects-with-the-Eff-Monad) for more details.

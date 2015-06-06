@@ -1,5 +1,7 @@
 module Control.Monad.Eff.Unsafe where
 
+import Prelude
+
 import Control.Monad.Eff
 
 -- | Change the type of an effectful computation, allowing it to be run in another context.
