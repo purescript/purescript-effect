@@ -5,6 +5,6 @@
     "gulp-jscs": "^1.6.0",
     "gulp-jshint": "^1.10.0",
     "gulp-plumber": "^1.0.0",
-    "gulp-purescript": "^0.5.0"
+    "gulp-purescript": "^0.5.0-rc.1"
   }
 }
