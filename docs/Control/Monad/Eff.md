@@ -6,6 +6,12 @@
 data Eff :: # ! -> * -> *
 ```
 
+The `Eff` type constructor is used to represent _native_ effects.
+
+See [Handling Native Effects with the Eff Monad](https://github.com/purescript/purescript/wiki/Handling-Native-Effects-with-the-Eff-Monad) for more details.
+
+The first type parameter is a row of effects which represents the contexts in which a computation can be run, and the second type parameter is the return type.
+
 ##### Instances
 ``` purescript
 instance functorEff :: Functor (Eff e)
@@ -14,12 +20,6 @@ instance applicativeEff :: Applicative (Eff e)
 instance bindEff :: Bind (Eff e)
 instance monadEff :: Monad (Eff e)
 ```
-
-The `Eff` type constructor is used to represent _native_ effects.
-
-See [Handling Native Effects with the Eff Monad](https://github.com/purescript/purescript/wiki/Handling-Native-Effects-with-the-Eff-Monad) for more details.
-
-The first type parameter is a row of effects which represents the contexts in which a computation can be run, and the second type parameter is the return type.
 
 #### `Pure`
 
