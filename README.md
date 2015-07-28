@@ -15,5 +15,5 @@ bower install purescript-eff
 ## Module documentation
 
 - [Control.Monad.Eff](docs/Control/Monad/Eff.md)
-- [Control.Monad.Eff.Unsafe](docs/Control/Monad.Eff/Unsafe.md)
-- [Control.Monad.Eff.Class](docs/Control/Monad.Eff/Class.md)
+- [Control.Monad.Eff.Unsafe](docs/Control/Monad/Eff/Unsafe.md)
+- [Control.Monad.Eff.Class](docs/Control/Monad/Eff/Class.md)
