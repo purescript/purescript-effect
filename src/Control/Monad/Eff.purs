@@ -21,12 +21,9 @@ foreign import bindE :: forall e a b. Eff e a -> (a -> Eff e b) -> Eff e b
 -- | The `Pure` type synonym represents _pure_ computations, i.e. ones in which all effects have been handled.
 -- |
 -- | The `runPure` function can be used to run pure computations and obtain their result.
-type Pure a = forall e. Eff e a
+type Pure a = Eff () a
 
 -- | Run a pure computation and return its result.
--- |
--- | Note: since this function has a rank-2 type, it may cause problems to apply this function using the `$` operator. The recommended approach
--- | is to use parentheses instead.
 foreign import runPure :: forall a. Pure a -> a
 
 instance functorEff :: Functor (Eff e) where
