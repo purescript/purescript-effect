@@ -8,3 +8,8 @@ import Control.Monad.Eff
 -- |
 -- | Note: use of this function can result in arbitrary side-effects.
 foreign import unsafeInterleaveEff :: forall eff1 eff2 a. Eff eff1 a -> Eff eff2 a
+
+-- | Run an effectful computation. Note: use of this function can result in
+-- | arbitrary side-effects.
+unsafePerformEff :: forall eff a. Eff eff a -> a
+unsafePerformEff = runPure <<< unsafeInterleaveEff
