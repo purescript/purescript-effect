@@ -16,7 +16,7 @@ import Control.Monad.Eff (Eff)
 -- | inference can be tricky. It is generally recommended to either work with a
 -- | polymorphic row of effects, or a concrete, closed row of effects such as
 -- | `(trace :: Trace)`.
-class Monad m <= MonadEff eff m where
+class Monad m <= MonadEff eff m | m -> eff where
   liftEff :: forall a. Eff eff a -> m a
 
 instance monadEffEff :: MonadEff eff (Eff eff) where
