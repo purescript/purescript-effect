@@ -1,7 +1,5 @@
 "use strict";
 
-// module Control.Monad.Eff
-
 exports.pureE = function (a) {
   return function () {
     return a;
