@@ -7,7 +7,7 @@ import Control.Semigroupoid ((<<<))
 -- | another context.
 -- |
 -- | *Note*: use of this function can result in arbitrary side-effects.
-foreign import unsafeInterleaveEff
+foreign import unsafeCoerceEff
   :: forall eff1 eff2 a
    . Eff eff1 a
   -> Eff eff2 a
@@ -16,4 +16,4 @@ foreign import unsafeInterleaveEff
 -- |
 -- | *Note*: use of this function can result in arbitrary side-effects.
 unsafePerformEff :: forall eff a. Eff eff a -> a
-unsafePerformEff = runPure <<< unsafeInterleaveEff
+unsafePerformEff = runPure <<< unsafeCoerceEff

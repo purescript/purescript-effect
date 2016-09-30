@@ -1,7 +1,5 @@
 "use strict";
 
-// module Control.Monad.Eff.Unsafe
-
-exports.unsafeInterleaveEff = function (f) {
+exports.unsafeCoerceEff = function (f) {
   return f;
 };
