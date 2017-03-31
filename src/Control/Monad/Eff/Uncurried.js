@@ -1,3 +1,5 @@
+"use strict";
+
 exports.mkEffFn1 = function mkEffFn1(fn) {
   return function(x) {
     return fn(x)();
