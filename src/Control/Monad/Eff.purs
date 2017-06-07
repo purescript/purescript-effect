@@ -84,6 +84,6 @@ foreign import forE :: forall e. Int -> Int -> (Int -> Eff e Unit) -> Eff e Unit
 
 -- | Loop over an array of values.
 -- |
--- | `foreach xs f` runs the computation returned by the function `f` for each
+-- | `foreachE xs f` runs the computation returned by the function `f` for each
 -- | of the inputs `xs`.
 foreign import foreachE :: forall e a. Array a -> (a -> Eff e Unit) -> Eff e Unit
