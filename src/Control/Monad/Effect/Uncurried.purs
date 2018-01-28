@@ -21,8 +21,7 @@
 -- |
 -- | ```purescript
 -- | -- In the PureScript file:
--- | foreign import logMessage :: forall eff.
--- |   String -> String -> Effect (console :: CONSOLE | eff) Unit
+-- | foreign import logMessage :: String -> String -> Effect Unit
 -- | ```
 -- |
 -- | ```javascript
@@ -48,8 +47,7 @@
 -- |
 -- | ```purescript
 -- | -- In the PureScript file:
--- | foreign import logMessageImpl :: forall eff.
--- |   EffectFn2 (console :: CONSOLE | eff) String String Unit
+-- | foreign import logMessageImpl :: EffectFn2 String String Unit
 -- | ```
 -- |
 -- | ```javascript
@@ -60,8 +58,7 @@
 -- | You can then use `runEffectFn2` to provide a nicer version:
 -- |
 -- | ```purescript
--- | logMessage :: forall eff.
--- |   String -> String -> Effect (console :: CONSOLE | eff) Unit
+-- | logMessage :: String -> String -> Effect Unit
 -- | logMessage = runEffectFn2 logMessageImpl
 -- | ```
 -- |
@@ -94,14 +91,12 @@
 -- |
 -- | The import then looks like this:
 -- | ```purescript
--- | foreign import logMessageImpl :: forall eff.
--- |  EffectFn3 (http :: HTTP, console :: CONSOLE | eff)
--- |         String
--- |         String
--- |         (EffectFn1 (http :: HTTP, console :: CONSOLE | eff)
--- |            (Nullable HttpResponse)
--- |            Unit)
--- |         Unit
+-- | foreign import logMessageImpl
+-- |  EffectFn3
+-- |    String
+-- |    String
+-- |    (EffectFn1 (Nullable HttpResponse) Unit)
+-- |    Unit
 -- | ```
 -- |
 -- | And, as before, the FFI file is extremely simple:
@@ -114,11 +109,11 @@
 -- | PureScript version:
 -- |
 -- | ```purescript
--- | logMessage :: forall eff.
+-- | logMessage ::
 -- |   String ->
 -- |   String ->
--- |   (Nullable HttpResponse -> Effect (http :: HTTP, console :: CONSOLE | eff) Unit) ->
--- |   Effect (http :: HTTP, console :: CONSOLE | eff) Unit
+-- |   (Nullable HttpResponse -> Effect Unit) ->
+-- |   Effect Unit
 -- | logMessage level message callback =
 -- |   runEffectFn3 logMessageImpl level message (mkEffectFn1 callback)
 -- | ```
