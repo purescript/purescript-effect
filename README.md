@@ -1,7 +1,7 @@
 # purescript-effect
 
-[![Latest release](http://img.shields.io/github/release/purescript/purescript-eff.svg)](https://github.com/purescript/purescript-effect/releases)
-[![Build status](https://travis-ci.org/purescript/purescript-eff.svg?branch=master)](https://travis-ci.org/purescript/purescript-effect)
+[![Latest release](http://img.shields.io/github/release/purescript/purescript-effect.svg)](https://github.com/purescript/purescript-effect/releases)
+[![Build status](https://travis-ci.org/purescript/purescript-effect.svg?branch=master)](https://travis-ci.org/purescript/purescript-effect)
 
 The `Effect` monad, for handling native side effects.
 
