@@ -14,10 +14,6 @@ exports.bindE = function (a) {
   };
 };
 
-exports.runPure = function (f) {
-  return f();
-};
-
 exports.untilE = function (f) {
   return function () {
     while (!f());

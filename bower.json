@@ -1,11 +1,11 @@
 {
-  "name": "purescript-eff",
-  "homepage": "https://github.com/purescript/purescript-eff",
-  "description": "The Eff monad, for handling native side effects",
+  "name": "purescript-effect",
+  "homepage": "https://github.com/purescript/purescript-effect",
+  "description": "The Effect monad, for handling native side effects",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/purescript/purescript-eff.git"
+    "url": "git://github.com/purescript/purescript-effect.git"
   },
   "ignore": [
     "**/.*",
