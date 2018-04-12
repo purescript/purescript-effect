@@ -1,8 +1,8 @@
-module Control.Monad.Effect.Class where
+module Effect.Class where
 
 import Control.Category (id)
 import Control.Monad (class Monad)
-import Control.Monad.Effect (Effect)
+import Effect (Effect)
 
 -- | The `MonadEffect` class captures those monads which support native effects.
 -- |

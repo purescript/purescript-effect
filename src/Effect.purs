@@ -1,4 +1,4 @@
-module Control.Monad.Effect
+module Effect
   ( Effect
   , untilE, whileE, forE, foreachE
   ) where

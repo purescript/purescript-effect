@@ -1,6 +1,6 @@
-module Control.Monad.Effect.Unsafe where
+module Effect.Unsafe where
 
-import Control.Monad.Effect (Effect)
+import Effect (Effect)
 
 -- | Run an effectful computation.
 -- |

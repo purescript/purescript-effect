@@ -132,9 +132,9 @@
 -- |   callbacks.
 -- |
 
-module Control.Monad.Effect.Uncurried where
+module Effect.Uncurried where
 
-import Control.Monad.Effect (Effect)
+import Effect (Effect)
 
 foreign import data EffectFn1 :: Type -> Type -> Type
 foreign import data EffectFn2 :: Type -> Type -> Type -> Type
