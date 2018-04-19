@@ -4,11 +4,13 @@ module Effect
   ) where
 
 import Control.Applicative (class Applicative, liftA1)
-import Control.Apply (class Apply)
+import Control.Apply (class Apply, lift2)
 import Control.Bind (class Bind)
 import Control.Monad (class Monad, ap)
 
 import Data.Functor (class Functor)
+import Data.Monoid (class Monoid, mempty)
+import Data.Semigroup (class Semigroup, append)
 import Data.Unit (Unit)
 
 -- | The `Effect` type constructor is used to represent _native_ effects.
@@ -27,6 +29,12 @@ instance applyEffect :: Apply Effect where
 
 instance applicativeEffect :: Applicative Effect where
   pure = pureE
+
+instance semigroupEffect :: Semigroup a => Semigroup (Effect a) where
+  append = lift2 append
+
+instance monoidEffect :: Monoid a => Monoid (Effect a) where
+  mempty = pureE mempty
 
 foreign import pureE :: forall a. a -> Effect a
 
