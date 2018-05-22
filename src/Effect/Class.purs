@@ -1,6 +1,6 @@
 module Effect.Class where
 
-import Control.Category (id)
+import Control.Category (identity)
 import Control.Monad (class Monad)
 import Effect (Effect)
 
@@ -16,4 +16,4 @@ class Monad m <= MonadEffect m where
   liftEffect :: forall a. Effect a -> m a
 
 instance monadEffectEffect :: MonadEffect Effect where
-  liftEffect = id
+  liftEffect = identity

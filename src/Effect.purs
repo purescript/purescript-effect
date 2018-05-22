@@ -3,15 +3,9 @@ module Effect
   , untilE, whileE, forE, foreachE
   ) where
 
-import Control.Applicative (class Applicative, liftA1)
-import Control.Apply (class Apply, lift2)
-import Control.Bind (class Bind)
-import Control.Monad (class Monad, ap)
+import Prelude
 
-import Data.Functor (class Functor)
-import Data.Monoid (class Monoid, mempty)
-import Data.Semigroup (class Semigroup, append)
-import Data.Unit (Unit)
+import Control.Apply (lift2)
 
 -- | The `Effect` type constructor is used to represent _native_ effects.
 -- |
@@ -30,12 +24,6 @@ instance applyEffect :: Apply Effect where
 instance applicativeEffect :: Applicative Effect where
   pure = pureE
 
-instance semigroupEffect :: Semigroup a => Semigroup (Effect a) where
-  append = lift2 append
-
-instance monoidEffect :: Monoid a => Monoid (Effect a) where
-  mempty = pureE mempty
-
 foreign import pureE :: forall a. a -> Effect a
 
 instance bindEffect :: Bind Effect where
@@ -44,6 +32,12 @@ instance bindEffect :: Bind Effect where
 foreign import bindE :: forall a b. Effect a -> (a -> Effect b) -> Effect b
 
 instance monadEffect :: Monad Effect
+
+instance semigroupEffect :: Semigroup a => Semigroup (Effect a) where
+  append = lift2 append
+
+instance monoidEffect :: Monoid a => Monoid (Effect a) where
+  mempty = pureE mempty
 
 -- | Loop until a condition becomes `true`.
 -- |
