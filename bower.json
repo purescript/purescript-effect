@@ -1,8 +1,7 @@
 {
   "name": "purescript-effect",
   "homepage": "https://github.com/purescript/purescript-effect",
-  "description": "The Effect monad, for handling native side effects",
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
     "url": "git://github.com/purescript/purescript-effect.git"
@@ -17,6 +16,6 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-prelude": "purescript/purescript-prelude#compiler/0.12"
+    "purescript-prelude": "^4.0.0"
   }
 }
