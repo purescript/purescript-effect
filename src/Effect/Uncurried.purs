@@ -122,10 +122,8 @@
 -- | follows:
 -- |
 -- | * `EffectFn{N}` means, a curried function which accepts N arguments and
--- |   performs some effects. The first type argument is the row of effects,
--- |   which works exactly the same way as in `Effect`. The last type argument
--- |   is the return type. All other arguments are the actual function's
--- |   arguments.
+-- |   performs some effects. The last type argument is the return type. All
+-- |   other arguments are the actual function's arguments.
 -- | * `runEffectFn{N}` takes an `EffectFn` of N arguments, and converts it into the
 -- |   normal PureScript form: a curried function which returns an Effect action.
 -- | * `mkEffectFn{N}` is the inverse of `runEffectFn{N}`. It can be useful for
