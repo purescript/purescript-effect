@@ -1,8 +1,8 @@
 -- | This module defines types for effectful uncurried functions, as well as
 -- | functions for converting back and forth between them.
 -- |
--- | Traditionally, it has been difficult to give a PureScript type to
--- | JavaScript functions such as this one:
+-- | This makes it possible to give a PureScript type to JavaScript functions
+-- | such as this one:
 -- |
 -- | ```javascript
 -- | function logMessage(level, message) {
@@ -14,10 +14,9 @@
 -- | receiving all of its parameters, so giving it the type `Data.Function.Fn2
 -- | String String Unit`, while convenient, would effectively be a lie.
 -- |
--- | Because there has been no way of giving such functions types, we generally
--- | resort to converting functions into the normal PureScript form (namely,
--- | a curried function returning an Effect action), and performing the
--- | marshalling in JavaScript, in the FFI module, like this:
+-- | One way to handle this would be to convert the function into the normal
+-- | PureScript form (namely, a curried function returning an Effect action),
+-- | and performing the marshalling in JavaScript, in the FFI module, like this:
 -- |
 -- | ```purescript
 -- | -- In the PureScript file:
@@ -64,9 +63,9 @@
 -- |
 -- | (note that this has the same type as the original `logMessage`).
 -- |
--- | Effectively, we have reduced the risk of errors by moving as much code
--- | into PureScript as possible, so that we can leverage the type system.
--- | Hopefully, this is a little less tiresome too.
+-- | Effectively, we have reduced the risk of errors by moving as much code into
+-- | PureScript as possible, so that we can leverage the type system. Hopefully,
+-- | this is a little less tiresome too.
 -- |
 -- | Here's a slightly more advanced example. Here, because we are using
 -- | callbacks, we need to use `mkEffectFn{N}` as well.
@@ -121,13 +120,12 @@
 -- | The general naming scheme for functions and types in this module is as
 -- | follows:
 -- |
--- | * `EffectFn{N}` means, a curried function which accepts N arguments and
--- |   performs some effects. The first type argument is the row of effects,
--- |   which works exactly the same way as in `Effect`. The last type argument
--- |   is the return type. All other arguments are the actual function's
--- |   arguments.
--- | * `runEffectFn{N}` takes an `EffectFn` of N arguments, and converts it into the
--- |   normal PureScript form: a curried function which returns an Effect action.
+-- | * `EffectFn{N}` means, an uncurried function which accepts N arguments and
+-- |   performs some effects. The first N arguments are the actual function's
+-- |   argument. The last type argument is the return type.
+-- | * `runEffectFn{N}` takes an `EffectFn` of N arguments, and converts it into
+-- |   the normal PureScript form: a curried function which returns an Effect
+-- |   action.
 -- | * `mkEffectFn{N}` is the inverse of `runEffectFn{N}`. It can be useful for
 -- |   callbacks.
 -- |
