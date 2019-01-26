@@ -1,3 +1,6 @@
+-- | This module provides the `Effect` type, which is used to represent
+-- | _native_ effects. The `Effect` type provides a typed API for effectful
+-- | computations, while at the same time generating efficient JavaScript.
 module Effect
   ( Effect
   , untilE, whileE, forE, foreachE
@@ -7,12 +10,9 @@ import Prelude
 
 import Control.Apply (lift2)
 
--- | The `Effect` type constructor is used to represent _native_ effects.
--- |
--- | See [Handling Native Effects with the Effect Monad](http://www.purescript.org/learn/eff/)
--- | for more details.
--- |
--- | The type parameter denotes the return type of running the effect.
+-- | A native effect. The type parameter denotes the return type of running the
+-- | effect, that is, an `Effect Int` is a possibly-effectful computation which
+-- | eventually produces a value of the type `Int` when it finishes.
 foreign import data Effect :: Type -> Type
 
 instance functorEffect :: Functor Effect where
@@ -33,9 +33,14 @@ foreign import bindE :: forall a b. Effect a -> (a -> Effect b) -> Effect b
 
 instance monadEffect :: Monad Effect
 
+-- | The `Semigroup` instance for effects allows you to run two effects, one
+-- | after the other, and then combine their results using the result type's
+-- | `Semigroup` instance.
 instance semigroupEffect :: Semigroup a => Semigroup (Effect a) where
   append = lift2 append
 
+-- | If you have a `Monoid a` instance, then `mempty :: Effect a` is defined as
+-- | `pure mempty`.
 instance monoidEffect :: Monoid a => Monoid (Effect a) where
   mempty = pureE mempty
 
