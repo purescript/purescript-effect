@@ -2,9 +2,15 @@
   "private": true,
   "scripts": {
     "clean": "rimraf output && rimraf .pulp-cache",
-    "build": "eslint src && pulp build -- --censor-lib --strict"
+    "test": "pulp test",
+    "build": "eslint src && pulp build -- --censor-lib --strict",
+    "install": "bower install && cd bench && bower install",
+    "bench:start": "npm run bench:build && npm run bench:run",
+    "bench:run": "node --expose-gc -e 'require(\"./bench/output/Bench.Main/index.js\").main()'",
+    "bench:build": "cd bench && eslint src && pulp build -- --censor-lib --strict"
   },
   "devDependencies": {
+    "bower": "^1.8.8",
     "eslint": "^4.19.1",
     "pulp": "^12.2.0",
     "purescript-psa": "^0.6.0",

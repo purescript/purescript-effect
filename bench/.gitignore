@@ -1,0 +1,5 @@
+/.*
+!/.gitignore
+!/.travis.yml
+/bower_components/
+/output/

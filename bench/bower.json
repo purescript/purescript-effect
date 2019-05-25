@@ -1,0 +1,11 @@
+{
+  "name": "purescript-eff-aff-bench",
+  "dependencies": {
+    "purescript-minibench": "^2.0.0",
+    "purescript-effect": "safareli/purescript-effect#fast",
+    "purescript-aff": "^5.0.0"
+  },
+  "resolutions": {
+    "purescript-effect": "fast"
+  }
+}

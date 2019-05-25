@@ -19,7 +19,7 @@
     "no-param-reassign": 2,
     "no-return-assign": 2,
     "no-unused-expressions": 2,
-    "no-use-before-define": 2,
+    "no-use-before-define": [2, "nofunc"],
     "radix": [2, "always"],
     "indent": [2, 2, { "SwitchCase": 1 }],
     "quotes": [2, "double"],

@@ -16,10 +16,14 @@ import Control.Apply (lift2)
 foreign import data Effect :: Type -> Type
 
 instance functorEffect :: Functor Effect where
-  map = liftA1
+  map = mapE
+
+foreign import mapE :: forall a b. (a -> b) -> Effect a -> Effect b
 
 instance applyEffect :: Apply Effect where
-  apply = ap
+  apply = applyE
+
+foreign import applyE :: forall a b. Effect (a -> b) -> Effect a -> Effect b
 
 instance applicativeEffect :: Applicative Effect where
   pure = pureE
