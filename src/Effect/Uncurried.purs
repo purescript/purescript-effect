@@ -132,6 +132,8 @@
 
 module Effect.Uncurried where
 
+import Data.Function (($))
+import Data.Monoid (class Monoid, class Semigroup, mempty, (<>))
 import Effect (Effect)
 
 foreign import data EffectFn1 :: Type -> Type -> Type
@@ -186,3 +188,63 @@ foreign import runEffectFn9 :: forall a b c d e f g h i r.
   EffectFn9 a b c d e f g h i r -> a -> b -> c -> d -> e -> f -> g -> h -> i -> Effect r
 foreign import runEffectFn10 :: forall a b c d e f g h i j r.
   EffectFn10 a b c d e f g h i j r -> a -> b -> c -> d -> e -> f -> g -> h -> i -> j -> Effect r
+
+instance semigroupEffectFn1 :: Semigroup r => Semigroup (EffectFn1 a r) where
+  append f1 f2 = mkEffectFn1 $ runEffectFn1 f1 <> runEffectFn1 f2
+
+instance semigroupEffectFn2 :: Semigroup r => Semigroup (EffectFn2 a b r) where
+  append f1 f2 = mkEffectFn2 $ runEffectFn2 f1 <> runEffectFn2 f2
+
+instance semigroupEffectFn3 :: Semigroup r => Semigroup (EffectFn3 a b c r) where
+  append f1 f2 = mkEffectFn3 $ runEffectFn3 f1 <> runEffectFn3 f2
+
+instance semigroupEffectFn4 :: Semigroup r => Semigroup (EffectFn4 a b c d r) where
+  append f1 f2 = mkEffectFn4 $ runEffectFn4 f1 <> runEffectFn4 f2
+
+instance semigroupEffectFn5 :: Semigroup r => Semigroup (EffectFn5 a b c d e r) where
+  append f1 f2 = mkEffectFn5 $ runEffectFn5 f1 <> runEffectFn5 f2
+
+instance semigroupEffectFn6 :: Semigroup r => Semigroup (EffectFn6 a b c d e f r) where
+  append f1 f2 = mkEffectFn6 $ runEffectFn6 f1 <> runEffectFn6 f2
+
+instance semigroupEffectFn7 :: Semigroup r => Semigroup (EffectFn7 a b c d e f g r) where
+  append f1 f2 = mkEffectFn7 $ runEffectFn7 f1 <> runEffectFn7 f2
+
+instance semigroupEffectFn8 :: Semigroup r => Semigroup (EffectFn8 a b c d e f g h r) where
+  append f1 f2 = mkEffectFn8 $ runEffectFn8 f1 <> runEffectFn8 f2
+
+instance semigroupEffectFn9 :: Semigroup r => Semigroup (EffectFn9 a b c d e f g h i r) where
+  append f1 f2 = mkEffectFn9 $ runEffectFn9 f1 <> runEffectFn9 f2
+
+instance semigroupEffectFn10 :: Semigroup r => Semigroup (EffectFn10 a b c d e f g h i j r) where
+  append f1 f2 = mkEffectFn10 $ runEffectFn10 f1 <> runEffectFn10 f2
+
+instance monoidEffectFn1 :: Monoid r => Monoid (EffectFn1 a r) where
+  mempty = mkEffectFn1 mempty
+
+instance monoidEffectFn2 :: Monoid r => Monoid (EffectFn2 a b r) where
+  mempty = mkEffectFn2 mempty
+
+instance monoidEffectFn3 :: Monoid r => Monoid (EffectFn3 a b c r) where
+  mempty = mkEffectFn3 mempty
+
+instance monoidEffectFn4 :: Monoid r => Monoid (EffectFn4 a b c d r) where
+  mempty = mkEffectFn4 mempty
+
+instance monoidEffectFn5 :: Monoid r => Monoid (EffectFn5 a b c d e r) where
+  mempty = mkEffectFn5 mempty
+
+instance monoidEffectFn6 :: Monoid r => Monoid (EffectFn6 a b c d e f r) where
+  mempty = mkEffectFn6 mempty
+
+instance monoidEffectFn7 :: Monoid r => Monoid (EffectFn7 a b c d e f g r) where
+  mempty = mkEffectFn7 mempty
+
+instance monoidEffectFn8 :: Monoid r => Monoid (EffectFn8 a b c d e f g h r) where
+  mempty = mkEffectFn8 mempty
+
+instance monoidEffectFn9 :: Monoid r => Monoid (EffectFn9 a b c d e f g h i r) where
+  mempty = mkEffectFn9 mempty
+
+instance monoidEffectFn10 :: Monoid r => Monoid (EffectFn10 a b c d e f g h i j r) where
+  mempty = mkEffectFn10 mempty
