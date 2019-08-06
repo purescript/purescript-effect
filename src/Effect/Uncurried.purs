@@ -188,6 +188,14 @@ foreign import runEffectFn9 :: forall a b c d e f g h i r.
 foreign import runEffectFn10 :: forall a b c d e f g h i j r.
   EffectFn10 a b c d e f g h i j r -> a -> b -> c -> d -> e -> f -> g -> h -> i -> j -> Effect r
 
+-- The reason these are written eta-expanded instead of as:
+-- ```
+-- append f1 f2 = mkEffectFnN $ runEffectFnN f1 <> runEffectFnN f2
+-- ```
+-- is to help the compiler recognize that it can emit uncurried
+-- JS functions (which are more efficient), when an appended
+-- EffectFn is applied to all its arguments
+
 instance semigroupEffectFn1 :: Semigroup r => Semigroup (EffectFn1 a r) where
   append f1 f2 = mkEffectFn1 \a -> runEffectFn1 f1 a <> runEffectFn1 f2 a
 
