@@ -15,6 +15,8 @@ import Control.Apply (lift2)
 -- | eventually produces a value of the type `Int` when it finishes.
 foreign import data Effect :: Type -> Type
 
+type role Effect representational
+
 instance functorEffect :: Functor Effect where
   map = liftA1
 
