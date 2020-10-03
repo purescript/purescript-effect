@@ -17,7 +17,6 @@ exports.bindE = function (a) {
 exports.untilE = function (f) {
   return function () {
     while (!f());
-    return {};
   };
 };
 
@@ -27,7 +26,6 @@ exports.whileE = function (f) {
       while (f()) {
         a();
       }
-      return {};
     };
   };
 };
