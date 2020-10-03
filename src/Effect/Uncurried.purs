@@ -136,15 +136,44 @@ import Data.Monoid (class Monoid, class Semigroup, mempty, (<>))
 import Effect (Effect)
 
 foreign import data EffectFn1 :: Type -> Type -> Type
+
+type role EffectFn1 representational representational
+
 foreign import data EffectFn2 :: Type -> Type -> Type -> Type
+
+type role EffectFn2 representational representational representational
+
 foreign import data EffectFn3 :: Type -> Type -> Type -> Type -> Type
+
+type role EffectFn3 representational representational representational representational
+
 foreign import data EffectFn4 :: Type -> Type -> Type -> Type -> Type -> Type
+
+type role EffectFn4 representational representational representational representational representational
+
 foreign import data EffectFn5 :: Type -> Type -> Type -> Type -> Type -> Type -> Type
+
+type role EffectFn5 representational representational representational representational representational representational
+
 foreign import data EffectFn6 :: Type -> Type -> Type -> Type -> Type -> Type -> Type -> Type
+
+type role EffectFn6 representational representational representational representational representational representational representational
+
 foreign import data EffectFn7 :: Type -> Type -> Type -> Type -> Type -> Type -> Type -> Type -> Type
+
+type role EffectFn7 representational representational representational representational representational representational representational representational
+
 foreign import data EffectFn8 :: Type -> Type -> Type -> Type -> Type -> Type -> Type -> Type -> Type -> Type
+
+type role EffectFn8 representational representational representational representational representational representational representational representational representational
+
 foreign import data EffectFn9 :: Type -> Type -> Type -> Type -> Type -> Type -> Type -> Type -> Type -> Type -> Type
+
+type role EffectFn9 representational representational representational representational representational representational representational representational representational representational
+
 foreign import data EffectFn10 :: Type -> Type -> Type -> Type -> Type -> Type -> Type -> Type -> Type -> Type -> Type -> Type
+
+type role EffectFn10 representational representational representational representational representational representational representational representational representational representational representational
 
 foreign import mkEffectFn1 :: forall a r.
   (a -> Effect r) -> EffectFn1 a r
