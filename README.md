@@ -1,14 +1,14 @@
 # purescript-effect
 
 [![Latest release](http://img.shields.io/github/release/purescript/purescript-effect.svg)](https://github.com/purescript/purescript-effect/releases)
-[![Build status](https://travis-ci.org/purescript/purescript-effect.svg?branch=master)](https://travis-ci.org/purescript/purescript-effect)
+[![Build status](https://github.com/purescript/purescript-effect/workflows/CI/badge.svg?branch=master)](https://github.com/purescript/purescript-effect/actions?query=workflow%3ACI+branch%3Amaster)
 
 The `Effect` monad, for handling native side effects.
 
 ## Installation
 
 ```
-bower install purescript-effect
+spago install effect
 ```
 
 ## Documentation
