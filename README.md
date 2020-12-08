@@ -2,6 +2,7 @@
 
 [![Latest release](http://img.shields.io/github/release/purescript/purescript-effect.svg)](https://github.com/purescript/purescript-effect/releases)
 [![Build status](https://github.com/purescript/purescript-effect/workflows/CI/badge.svg?branch=master)](https://github.com/purescript/purescript-effect/actions?query=workflow%3ACI+branch%3Amaster)
+[![Pursuit](https://pursuit.purescript.org/packages/purescript-effect/badge)](https://pursuit.purescript.org/packages/purescript-effect)
 
 The `Effect` monad, for handling native side effects.
 
@@ -18,17 +19,17 @@ the standard type PureScript uses to handle "native" effects, i.e. effects
 which are provided by the runtime system, and which cannot be emulated by pure
 functions. Some examples of native effects are:
 
-* Console IO
-* Random number generation
-* Exceptions
-* Reading/writing mutable state
+- Console IO
+- Random number generation
+- Exceptions
+- Reading/writing mutable state
 
 And in the browser:
 
-* DOM manipulation
-* XMLHttpRequest / AJAX calls
-* Interacting with a websocket
-* Writing/reading to/from local storage
+- DOM manipulation
+- XMLHttpRequest / AJAX calls
+- Interacting with a websocket
+- Writing/reading to/from local storage
 
 All of these things may be represented in PureScript by the `Effect` type.
 A value of the type `Effect a` represents a computation which may perform
@@ -122,12 +123,12 @@ and in the corresponding JavaScript module:
 
 ```javascript
 // Counter.js
-exports.incrCounter = function() {
+exports.incrCounter = function () {
   if (!window.globalCounter) {
     window.globalCounter = 0;
   }
   return ++window.globalCounter;
-}
+};
 ```
 
 For more information about the FFI (Foreign Function Interface), see
@@ -149,16 +150,19 @@ compiler produces the following JavaScript:
 
 ```javascript
 var printRandom = function __do() {
-    var $0 = Effect_Random.random();
-    return Effect_Console.log(Data_Show.show(Data_Show.showNumber)($0))();
+  var $0 = Effect_Random.random();
+  return Effect_Console.log(Data_Show.show(Data_Show.showNumber)($0))();
 };
 ```
 
 whereas a more naive compiler might, for instance, produce:
+
 ```javascript
-var printRandom = Control_Bind.bind(Effect.bindEffect)(Effect_Random.random)(function ($0) {
+var printRandom = Control_Bind.bind(Effect.bindEffect)(Effect_Random.random)(
+  function ($0) {
     return Effect_Console.log(Data_Show.show(Data_Show.showNumber)($0));
-});
+  }
+);
 ```
 
 While this is a small improvement, the benefit is greater when using
