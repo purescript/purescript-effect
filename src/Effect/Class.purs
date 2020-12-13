@@ -1,19 +1,12 @@
-module Effect.Class where
+module Effect.Class
+  ( module MonadEffect
+  , liftEffect
+  ) where
 
-import Control.Category (identity)
-import Control.Monad (class Monad)
-import Effect (Effect)
+import Effect (class MonadEffect, Effect)
+import Effect (class MonadEffect) as MonadEffect
+import Effect (liftEffect) as Effect
+import Prim.TypeError (class Warn, Text)
 
--- | The `MonadEffect` class captures those monads which support native effects.
--- |
--- | Instances are provided for `Effect` itself, and the standard monad
--- | transformers.
--- |
--- | `liftEffect` can be used in any appropriate monad transformer stack to lift an
--- | action of type `Effect a` into the monad.
--- |
-class Monad m <= MonadEffect m where
-  liftEffect :: forall a. Effect a -> m a
-
-instance monadEffectEffect :: MonadEffect Effect where
-  liftEffect = identity
+liftEffect :: forall a m. MonadEffect m => Warn (Text "'Effect.Class.liftEffect' is deprecated, use Effect.liftEffect instead") => Effect a -> m a
+liftEffect = Effect.liftEffect
