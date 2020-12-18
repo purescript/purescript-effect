@@ -51,3 +51,7 @@ exports.foreachE = function (as) {
     };
   };
 };
+
+exports.withGlobalLock = function (e) {
+  return e;
+};

@@ -3,7 +3,7 @@
 -- | computations, while at the same time generating efficient JavaScript.
 module Effect
   ( Effect
-  , untilE, whileE, forE, foreachE
+  , untilE, whileE, forE, foreachE, withGlobalLock
   ) where
 
 import Prelude
@@ -70,3 +70,9 @@ foreign import forE :: Int -> Int -> (Int -> Effect Unit) -> Effect Unit
 -- | `foreachE xs f` runs the computation returned by the function `f` for each
 -- | of the inputs `xs`.
 foreign import foreachE :: forall a. Array a -> (a -> Effect Unit) -> Effect Unit
+
+-- | Run the effect exclusively by acquiring a global runtime lock.
+-- |
+-- | On javascript, since javascript is single threaded, this simply returns
+-- | the provided effect.
+foreign import withGlobalLock :: forall a. Effect a -> Effect a
