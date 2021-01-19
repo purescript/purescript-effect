@@ -5,7 +5,7 @@ Notable changes to this project are documented in this file. The format is based
 ## [Unreleased]
 
 Breaking changes:
-  - Updated dependencies for PureScript 0.14 (#21)
+  - Added support for PureScript 0.14 and dropped support for all previous versions (#21)
 
 New features:
 - Added roles declarations to allow safe coercions (#20) 
@@ -15,8 +15,8 @@ Bugfixes:
 
 Other improvements:
   - Migrated CI to GitHub Actions and updated installation instructions to use Spago (#22)
-  - Added a CHANGELOG.md file and pull request template (#25 #26)
-  - Removed `return {}` from FFI functions (#18)
+  - Added a CHANGELOG.md file and pull request template (#25, #26)
+  - Removed `return {}` from FFI functions for a small performance boost (#18)
 
 ## [v2.0.1](https://github.com/purescript/purescript-effect/releases/tag/v2.0.1) - 2019-01-26
 
