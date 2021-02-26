@@ -4,7 +4,7 @@
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
-    "url": "git://github.com/purescript/purescript-effect.git"
+    "url": "https://github.com/purescript/purescript-effect.git"
   },
   "ignore": [
     "**/.*",
@@ -16,6 +16,6 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-prelude": "master"
+    "purescript-prelude": "^5.0.0"
   }
 }
