@@ -1,66 +1,66 @@
 "use strict";
 
-exports.mkEffectFn1 = function mkEffectFn1(fn) {
+export var mkEffectFn1 = function mkEffectFn1(fn) {
   return function(x) {
     return fn(x)();
   };
 };
 
-exports.mkEffectFn2 = function mkEffectFn2(fn) {
+export var mkEffectFn2 = function mkEffectFn2(fn) {
   return function(a, b) {
     return fn(a)(b)();
   };
 };
 
-exports.mkEffectFn3 = function mkEffectFn3(fn) {
+export var mkEffectFn3 = function mkEffectFn3(fn) {
   return function(a, b, c) {
     return fn(a)(b)(c)();
   };
 };
 
-exports.mkEffectFn4 = function mkEffectFn4(fn) {
+export var mkEffectFn4 = function mkEffectFn4(fn) {
   return function(a, b, c, d) {
     return fn(a)(b)(c)(d)();
   };
 };
 
-exports.mkEffectFn5 = function mkEffectFn5(fn) {
+export var mkEffectFn5 = function mkEffectFn5(fn) {
   return function(a, b, c, d, e) {
     return fn(a)(b)(c)(d)(e)();
   };
 };
 
-exports.mkEffectFn6 = function mkEffectFn6(fn) {
+export var mkEffectFn6 = function mkEffectFn6(fn) {
   return function(a, b, c, d, e, f) {
     return fn(a)(b)(c)(d)(e)(f)();
   };
 };
 
-exports.mkEffectFn7 = function mkEffectFn7(fn) {
+export var mkEffectFn7 = function mkEffectFn7(fn) {
   return function(a, b, c, d, e, f, g) {
     return fn(a)(b)(c)(d)(e)(f)(g)();
   };
 };
 
-exports.mkEffectFn8 = function mkEffectFn8(fn) {
+export var mkEffectFn8 = function mkEffectFn8(fn) {
   return function(a, b, c, d, e, f, g, h) {
     return fn(a)(b)(c)(d)(e)(f)(g)(h)();
   };
 };
 
-exports.mkEffectFn9 = function mkEffectFn9(fn) {
+export var mkEffectFn9 = function mkEffectFn9(fn) {
   return function(a, b, c, d, e, f, g, h, i) {
     return fn(a)(b)(c)(d)(e)(f)(g)(h)(i)();
   };
 };
 
-exports.mkEffectFn10 = function mkEffectFn10(fn) {
+export var mkEffectFn10 = function mkEffectFn10(fn) {
   return function(a, b, c, d, e, f, g, h, i, j) {
     return fn(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)();
   };
 };
 
-exports.runEffectFn1 = function runEffectFn1(fn) {
+export var runEffectFn1 = function runEffectFn1(fn) {
   return function(a) {
     return function() {
       return fn(a);
@@ -68,7 +68,7 @@ exports.runEffectFn1 = function runEffectFn1(fn) {
   };
 };
 
-exports.runEffectFn2 = function runEffectFn2(fn) {
+export var runEffectFn2 = function runEffectFn2(fn) {
   return function(a) {
     return function(b) {
       return function() {
@@ -78,7 +78,7 @@ exports.runEffectFn2 = function runEffectFn2(fn) {
   };
 };
 
-exports.runEffectFn3 = function runEffectFn3(fn) {
+export var runEffectFn3 = function runEffectFn3(fn) {
   return function(a) {
     return function(b) {
       return function(c) {
@@ -90,7 +90,7 @@ exports.runEffectFn3 = function runEffectFn3(fn) {
   };
 };
 
-exports.runEffectFn4 = function runEffectFn4(fn) {
+export var runEffectFn4 = function runEffectFn4(fn) {
   return function(a) {
     return function(b) {
       return function(c) {
@@ -104,7 +104,7 @@ exports.runEffectFn4 = function runEffectFn4(fn) {
   };
 };
 
-exports.runEffectFn5 = function runEffectFn5(fn) {
+export var runEffectFn5 = function runEffectFn5(fn) {
   return function(a) {
     return function(b) {
       return function(c) {
@@ -120,7 +120,7 @@ exports.runEffectFn5 = function runEffectFn5(fn) {
   };
 };
 
-exports.runEffectFn6 = function runEffectFn6(fn) {
+export var runEffectFn6 = function runEffectFn6(fn) {
   return function(a) {
     return function(b) {
       return function(c) {
@@ -138,7 +138,7 @@ exports.runEffectFn6 = function runEffectFn6(fn) {
   };
 };
 
-exports.runEffectFn7 = function runEffectFn7(fn) {
+export var runEffectFn7 = function runEffectFn7(fn) {
   return function(a) {
     return function(b) {
       return function(c) {
@@ -158,7 +158,7 @@ exports.runEffectFn7 = function runEffectFn7(fn) {
   };
 };
 
-exports.runEffectFn8 = function runEffectFn8(fn) {
+export var runEffectFn8 = function runEffectFn8(fn) {
   return function(a) {
     return function(b) {
       return function(c) {
@@ -180,7 +180,7 @@ exports.runEffectFn8 = function runEffectFn8(fn) {
   };
 };
 
-exports.runEffectFn9 = function runEffectFn9(fn) {
+export var runEffectFn9 = function runEffectFn9(fn) {
   return function(a) {
     return function(b) {
       return function(c) {
@@ -204,7 +204,7 @@ exports.runEffectFn9 = function runEffectFn9(fn) {
   };
 };
 
-exports.runEffectFn10 = function runEffectFn10(fn) {
+export var runEffectFn10 = function runEffectFn10(fn) {
   return function(a) {
     return function(b) {
       return function(c) {

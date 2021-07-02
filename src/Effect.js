@@ -1,12 +1,12 @@
 "use strict";
 
-exports.pureE = function (a) {
+export var pureE = function (a) {
   return function () {
     return a;
   };
 };
 
-exports.bindE = function (a) {
+export var bindE = function (a) {
   return function (f) {
     return function () {
       return f(a())();
@@ -14,13 +14,13 @@ exports.bindE = function (a) {
   };
 };
 
-exports.untilE = function (f) {
+export var untilE = function (f) {
   return function () {
     while (!f());
   };
 };
 
-exports.whileE = function (f) {
+export var whileE = function (f) {
   return function (a) {
     return function () {
       while (f()) {
@@ -30,7 +30,7 @@ exports.whileE = function (f) {
   };
 };
 
-exports.forE = function (lo) {
+export var forE = function (lo) {
   return function (hi) {
     return function (f) {
       return function () {
@@ -42,7 +42,7 @@ exports.forE = function (lo) {
   };
 };
 
-exports.foreachE = function (as) {
+export var foreachE = function (as) {
   return function (f) {
     return function () {
       for (var i = 0, l = as.length; i < l; i++) {
