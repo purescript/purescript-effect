@@ -1,5 +1,3 @@
-"use strict";
-
 export const mkEffectFn1 = function mkEffectFn1(fn) {
   return function(x) {
     return fn(x)();
