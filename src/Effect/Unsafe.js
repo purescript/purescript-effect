@@ -1,5 +1,3 @@
-"use strict";
-
-exports.unsafePerformEffect = function (f) {
+export const unsafePerformEffect = function (f) {
   return f();
 };
