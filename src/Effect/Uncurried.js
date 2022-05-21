@@ -1,3 +1,9 @@
+export const mkEffectFn0 = function mkEffectFn0(fn) {
+  return function() {
+    return fn()();
+  };
+};
+
 export const mkEffectFn1 = function mkEffectFn1(fn) {
   return function(x) {
     return fn(x)();
@@ -55,6 +61,12 @@ export const mkEffectFn9 = function mkEffectFn9(fn) {
 export const mkEffectFn10 = function mkEffectFn10(fn) {
   return function(a, b, c, d, e, f, g, h, i, j) {
     return fn(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)();
+  };
+};
+
+export const runEffectFn0 = function runEffectFn0(fn) {
+  return function() {
+    return fn();
   };
 };
 
