@@ -133,7 +133,12 @@
 module Effect.Uncurried where
 
 import Data.Monoid (class Monoid, class Semigroup, mempty, (<>))
+import Data.Unit (Unit)
 import Effect (Effect)
+
+foreign import data EffectFn0 :: Type -> Type
+
+type role EffectFn0 representational
 
 foreign import data EffectFn1 :: Type -> Type -> Type
 
@@ -175,6 +180,8 @@ foreign import data EffectFn10 :: Type -> Type -> Type -> Type -> Type -> Type -
 
 type role EffectFn10 representational representational representational representational representational representational representational representational representational representational representational
 
+foreign import mkEffectFn0 :: forall r.
+  (Unit -> Effect r) -> EffectFn0 r
 foreign import mkEffectFn1 :: forall a r.
   (a -> Effect r) -> EffectFn1 a r
 foreign import mkEffectFn2 :: forall a b r.
@@ -196,6 +203,8 @@ foreign import mkEffectFn9 :: forall a b c d e f g h i r.
 foreign import mkEffectFn10 :: forall a b c d e f g h i j r.
   (a -> b -> c -> d -> e -> f -> g -> h -> i -> j -> Effect r) -> EffectFn10 a b c d e f g h i j r
 
+foreign import runEffectFn0 :: forall r.
+  EffectFn0 r -> Effect r
 foreign import runEffectFn1 :: forall a r.
   EffectFn1 a r -> a -> Effect r
 foreign import runEffectFn2 :: forall a b r.
