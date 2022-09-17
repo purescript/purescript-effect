@@ -132,6 +132,8 @@
 
 module Effect.Uncurried where
 
+import Data.Debug (class Debug)
+import Data.Debug.Type as D
 import Data.Monoid (class Monoid, class Semigroup, mempty, (<>))
 import Effect (Effect)
 
@@ -284,3 +286,33 @@ instance monoidEffectFn9 :: Monoid r => Monoid (EffectFn9 a b c d e f g h i r) w
 
 instance monoidEffectFn10 :: Monoid r => Monoid (EffectFn10 a b c d e f g h i j r) where
   mempty = mkEffectFn10 \_ _ _ _ _ _ _ _ _ _ -> mempty
+
+instance Debug (EffectFn1 a r) where
+  debug _ = D.opaque_ "EffectFn1"
+
+instance Debug (EffectFn10 a b r) where
+  debug _ = D.opaque_ "EffectFn2"
+
+instance Debug (EffectFn10 a b c r) where
+  debug _ = D.opaque_ "EffectFn3"
+
+instance Debug (EffectFn10 a b c d r) where
+  debug _ = D.opaque_ "EffectFn4"
+
+instance Debug (EffectFn10 a b c d e r) where
+  debug _ = D.opaque_ "EffectFn5"
+
+instance Debug (EffectFn10 a b c d e f r) where
+  debug _ = D.opaque_ "EffectFn6"
+
+instance Debug (EffectFn10 a b c d e f g r) where
+  debug _ = D.opaque_ "EffectFn7"
+
+instance Debug (EffectFn10 a b c d e f g h r) where
+  debug _ = D.opaque_ "EffectFn8"
+
+instance Debug (EffectFn10 a b c d e f g h i r) where
+  debug _ = D.opaque_ "EffectFn9"
+
+instance Debug (EffectFn10 a b c d e f g h i j r) where
+  debug _ = D.opaque_ "EffectFn10"

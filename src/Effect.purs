@@ -8,6 +8,9 @@ module Effect
 
 import Prelude
 
+import Data.Debug (class Debug)
+import Data.Debug.Type as D
+
 import Control.Apply (lift2)
 
 -- | A native effect. The type parameter denotes the return type of running the
@@ -16,6 +19,9 @@ import Control.Apply (lift2)
 foreign import data Effect :: Type -> Type
 
 type role Effect representational
+
+instance Debug (Effect a) where
+  debug _ = D.opaque_ "Effect"
 
 instance functorEffect :: Functor Effect where
   map = liftA1
