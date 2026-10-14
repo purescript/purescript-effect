@@ -1,0 +1,9 @@
+package:
+  name: effect
+  description: The Effect monad, for handling native side effects
+  build:
+    strict: true
+    pedanticPackages: true
+  dependencies:
+    - prelude: ">=6.0.0 <7.0.0"
+workspace: {}

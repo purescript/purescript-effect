@@ -12,6 +12,8 @@ Bugfixes:
 
 Other improvements:
 
+- Migrate from Bower/Pulp to Spago and update CI and formatting/linting tools.
+
 ## [v4.0.0](https://github.com/purescript/purescript-effect/releases/tag/v4.0.0) - 2022-04-27
 
 Breaking changes:
@@ -52,6 +54,5 @@ Updated for PureScript 0.12
 - Added `Monoid` and `Semigroup` instances (@i-am-tom)
 
 ## [v1.0.0](https://github.com/purescript/purescript-effect/releases/tag/v1.0.0) - 2018-04-12
-
 
 
