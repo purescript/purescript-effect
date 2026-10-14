@@ -158,11 +158,9 @@ var printRandom = function __do() {
 whereas a more naive compiler might, for instance, produce:
 
 ```javascript
-var printRandom = Control_Bind.bind(Effect.bindEffect)(Effect_Random.random)(
-  function ($0) {
-    return Effect_Console.log(Data_Show.show(Data_Show.showNumber)($0));
-  }
-);
+var printRandom = Control_Bind.bind(Effect.bindEffect)(Effect_Random.random)(function ($0) {
+  return Effect_Console.log(Data_Show.show(Data_Show.showNumber)($0));
+});
 ```
 
 While this is a small improvement, the benefit is greater when using
