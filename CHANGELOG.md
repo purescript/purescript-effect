@@ -12,7 +12,7 @@ Bugfixes:
 
 Other improvements:
 
-- Migrate from Bower/Pulp to Spago and update CI and formatting/linting tools.
+- Migrate from Bower/Pulp to Spago and update CI and formatting/linting tools (#33 by @thomashoneyman)
 
 ## [v4.0.0](https://github.com/purescript/purescript-effect/releases/tag/v4.0.0) - 2022-04-27
 
